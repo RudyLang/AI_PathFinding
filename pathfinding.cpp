@@ -2,6 +2,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "TileMap.h"
+#include "Grid.h"
 
 int main()
 {
@@ -38,6 +39,14 @@ int main()
 		return -1;
 	}
 
+	// Create the grid using a graph
+	Graph grid;
+	if (!grid.load(sf::Vector2u(32, 32), level, 16, 8))
+	{
+		return -1;
+	}
+	
+
 	// Main game loop
 	while (window.isOpen())
 	{
@@ -48,7 +57,11 @@ int main()
 
 		// Draw the map
 		window.clear();
-		window.draw(map);
+
+		//window.draw(map);
+
+		window.draw(grid);
+
 		window.display();
 	}
 
