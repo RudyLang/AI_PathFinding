@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "Grid.h"
 
+
 Graph::Graph() {};
 
 Graph::Graph(std::vector<Edge> const& edges, int N)

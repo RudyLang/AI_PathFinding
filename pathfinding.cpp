@@ -3,9 +3,26 @@
 #include <SFML/Graphics.hpp>
 #include "TileMap.h"
 #include "Grid.h"
+#include "Helpers.h"
+
+#define CATCH_CONFIG_RUNNER
+#include "catch.h"
 
 int main()
 {
+	// Run Test Cases
+	std::cout << "Running Unit Tests..." << "\n";
+	int testResult = Catch::Session().run();
+	if (testResult != 0)
+	{
+		return -1;
+	}
+	else
+	{
+		std::cout << "All tests passed, running game..." << "\n";
+	}
+
+
     // Get screen resolution for SFML window
 	sf::Vector2f resolution;
 	resolution.x = sf::VideoMode::getDesktopMode().width;
